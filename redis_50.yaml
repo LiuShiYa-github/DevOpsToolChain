@@ -1,0 +1,16 @@
+redis.yml
+version: '3'
+services:
+    redis:
+      image: redis:5.0.0
+      container_name: redis
+      command: redis-server --requirepass 123456
+      ports:
+        - "6379:6379"
+      volumes:
+        - ./redisdata:/data
+
+#mkdir ./redisdata
+#docker-compose -f redis.yml up -d
+#docker exec -it redis bash
+#redis-cli -a 123456
