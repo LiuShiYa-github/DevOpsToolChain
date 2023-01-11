@@ -1,3 +1,6 @@
+## 参考
+[官方文档](https://docs.sonarqube.org/latest/)
+
 ## 默认账密
 ```shell
 login: admin
