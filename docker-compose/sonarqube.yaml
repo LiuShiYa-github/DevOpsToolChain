@@ -7,8 +7,8 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./sonarqube/postgresql/:/var/lib/postgresql
-      - ./sonarqube/datasql/:/var/lib/postgresql/data
+      - ./postgresql/:/var/lib/postgresql
+      - ./datasql/:/var/lib/postgresql/data
     environment:
       TZ: Asia/Shanghai
       POSTGRES_USER: sonar
@@ -23,10 +23,10 @@ services:
     depends_on:
       - postgres
     volumes:
-      - ./sonarqube/extensions:/opt/sonarqube/extensions
-      - ./sonarqube/logs:/opt/sonarqube/logs
-      - ./sonarqube/data:/opt/sonarqube/data
-      - ./sonarqube/conf:/opt/sonarqube/conf
+      - ./extensions:/opt/sonarqube/extensions
+      - ./logs:/opt/sonarqube/logs
+      - ./data:/opt/sonarqube/data
+      - ./conf:/opt/sonarqube/conf
     ports:
       - 9000:9000
     environment:
